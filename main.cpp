@@ -20,6 +20,7 @@ int main(int argc, char **argv) {
     }
 
     cvtColor(src, dst, CV_RGB2GRAY);
+    threshold(dst, dst, 250, 255, CV_THRESH_BINARY);
     bitwise_not(dst, dst);
     findContours(dst.clone(), contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
 
