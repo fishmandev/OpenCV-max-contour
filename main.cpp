@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     bitwise_not(dst, dst);
     findContours(dst.clone(), contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
 
-    Mat contourImage(src.size(), CV_8UC3, Scalar(255,255,255));
+    Mat contourImage(src.size(), CV_8UC1, Scalar(255));
 
     for (size_t idx = 0; idx < contours.size(); idx++) {
         if (max_area_value < contourArea(contours[idx])) {
